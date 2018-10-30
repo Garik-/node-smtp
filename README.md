@@ -1,5 +1,5 @@
 # REST SMTP transport server
-## USAGE
+## Usage
 JSON POST /api/mail
 ```
 {
@@ -9,9 +9,9 @@ JSON POST /api/mail
     message: string
 }
 ```
-## SETTINGS
+## Settings
 See .env.example
-## RUN
+## Run
 ```
 $ npm i
 $ npm start
