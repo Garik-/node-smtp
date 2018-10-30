@@ -1,0 +1,35 @@
+<html>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function sendmail(data) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:5000/api/mail",
+                    // The key needs to match your method's input parameter (case-sensitive).
+                    data: JSON.stringify(data),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(data) {
+                        console.log(data)
+                        if(data.response && data.response.success === true) {
+                            alert('success')
+                        }
+                    },
+                    failure: function(errMsg) {
+                        console.error(errMsg)
+                    }
+                })
+            }
+
+            sendmail({
+                name: 'user',
+                email: 'email@email.com',
+                message: 'test',
+                subject: 'test subject'
+            })
+        })
+    </script>
+</body>
+</html>
