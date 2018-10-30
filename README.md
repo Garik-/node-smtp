@@ -1,4 +1,4 @@
-# REST SMTP transport server
+# HTTP <-> SMTP transport server
 ## Usage
 JSON POST /api/mail
 ```
